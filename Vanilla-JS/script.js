@@ -48,17 +48,18 @@ for (const image of carouselImages) {
 // Carousel - Functions
 let position = 0;
 
-const setSliderPosition = () => {
-  carouselSlider.style.transform = `translateX(${-sliderWidth * position}px)`;
-  return position;
-};
-
 const addSliderAnimation = () => {
-  carouselSlider.style.transition = 'transform 0.2s ease-in-out';
+  carouselSlider.style.transition = 'transform 2s ease-in-out';
 };
 
 const removeSliderAnimation = () => {
   carouselSlider.style.transition = 'none';
+};
+
+const setSliderPosition = () => {
+  // addSliderAnimation();
+  carouselSlider.style.transform = `translateX(${-sliderWidth * position}px)`;
+  return position;
 };
 
 const nextImage = () => {
@@ -81,7 +82,7 @@ nextButton.addEventListener('click', () => {
     removeSliderAnimation();
     position = 0;
     setSliderPosition();
-    setTimeout(nextImage, 10);
+    setTimeout(nextImage, 1);
   }
 });
 
@@ -92,6 +93,6 @@ prevButton.addEventListener('click', () => {
     removeSliderAnimation();
     position = 3;
     setSliderPosition();
-    setTimeout(prevImage, 10);
+    setTimeout(prevImage, 1);
   }
 });
