@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* background-image-container */
+
+.background-image-container {
+  /* display flex */
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-between;
+  /* background-image */
+  background-image: url('../images/Beach-Sunset.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* container */
+  height: 100vh;
+  text-align: center;
+}
+
+.background-image-container header {
+  padding: 1%;
+  background-color: aqua;
+  width: 100vw;
+}
+
+a {
+  background-color: red;
+  /* justify-content: start; */
+}
+
+.background-image-container .select-background-image {
+  background-color: rgba(128, 128, 128, 0.671);
+  width: 100%;
+  padding: 1%;
+}
+
+/* Carousel Section */
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  margin: auto;
+}
+
+.carousel-container .carousel-slider-container {
+  border: 1px solid black;
+  overflow: hidden;
+}
+
+.carousel-container .carousel-slider {
+  width: 100%;
+  display: flex;
+}
+
+/* Circle Image Section */
+
+.circle-image-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 2%;
+  padding: 2%;
+}
+
+.circle-image-container .circle-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 20px solid grey;
+  margin: 10%;
+}
+
+.circle-image-container .circle-image-text {
+  width: 40%;
+}
