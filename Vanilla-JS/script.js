@@ -2,7 +2,7 @@ const backgroundImage = document.querySelector('.background-image-container');
 const selectBackgroundImage = document.querySelector('.select-background-image');
 
 selectBackgroundImage.addEventListener('click', (e) => {
-  if (e.target.className === 'select-background-image') return null;
+  if (e.target === selectBackgroundImage) return null;
   switch (e.target.value) {
     case 'image-1':
       backgroundImage.style.backgroundImage = "url('../images/Beach-Sunset.jpg')";
@@ -49,7 +49,7 @@ for (const image of carouselImages) {
 let position = 0;
 
 const addSliderAnimation = () => {
-  carouselSlider.style.transition = 'transform 2s ease-in-out';
+  carouselSlider.style.transition = 'transform 1200ms ease-in-out';
 };
 
 const removeSliderAnimation = () => {
@@ -95,4 +95,13 @@ prevButton.addEventListener('click', () => {
     setSliderPosition();
     setTimeout(prevImage, 1);
   }
+});
+
+// Accordion
+
+const accordionContainer = document.querySelector('.accordion-container');
+
+accordionContainer.addEventListener('click', (event) => {
+  if (event === accordionContainer) return null;
+  event.target.style.className = 'accordion-content accordion-selected'
 });

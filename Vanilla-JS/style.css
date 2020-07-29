@@ -79,3 +79,20 @@ a {
 .circle-image-container .circle-image-text {
   width: 40%;
 }
+
+/* Accordion */
+
+.accordion-toggle {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 30px;
+  text-decoration: none;
+}
+
+.accordion-content {
+  display: none;
+}
+
+.accordion-content.accordion-selected {
+  display: flex;
+}
