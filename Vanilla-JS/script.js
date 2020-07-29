@@ -57,7 +57,6 @@ const removeSliderAnimation = () => {
 };
 
 const setSliderPosition = () => {
-  // addSliderAnimation();
   carouselSlider.style.transform = `translateX(${-sliderWidth * position}px)`;
   return position;
 };
@@ -100,8 +99,21 @@ prevButton.addEventListener('click', () => {
 // Accordion
 
 const accordionContainer = document.querySelector('.accordion-container');
+const contents = document.querySelectorAll('.accordion-content');
 
 accordionContainer.addEventListener('click', (event) => {
   if (event === accordionContainer) return null;
-  event.target.style.className = 'accordion-content accordion-selected'
+  console.log(event.target.querySelector('i'));
+  const arrow = event.target.querySelector('i');
+  const contentToShow = event.target.nextElementSibling;
+  if (contentToShow.classList.contains('content-selected')) {
+    arrow.classList.remove('arrow-selected')
+    return contentToShow.classList.remove('content-selected');
+  } else {
+    for (content of contents) {
+      content.classList.add('content-hidden');
+    }
+    arrow.classList.add()
+    return contentToShow.classList.add('content-selected');
+  }
 });

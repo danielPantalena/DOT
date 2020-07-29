@@ -89,10 +89,24 @@ a {
   text-decoration: none;
 }
 
-.accordion-content {
-  display: none;
+div.accordion-content {
+  display: flex;
+  transition: all 700ms;
 }
 
-.accordion-content.accordion-selected {
-  display: flex;
+div.accordion-content.content-hidden {
+  height: 0vh;
+  overflow: hidden;
+}
+
+div.accordion-content.content-selected {
+  height: 100px;
+}
+
+a.accordion-toggle i {
+  transition: all 700ms;
+}
+
+a.accordion-toggle i.arrow-selected {
+  transform: rotate(180deg);
 }
