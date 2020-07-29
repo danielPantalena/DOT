@@ -28,12 +28,13 @@ const carouselImages = document.querySelectorAll('.carousel-slider img.carousel-
 // Carousel - buttons
 const prevButton = document.getElementById('previous-button');
 const nextButton = document.getElementById('next-button');
+const carouselArrows = document.querySelectorAll('.carousel-container i');
 
 // Carousel - dimensions
 const numberOfImages = carouselImages.length;
 const screenWidth = window.innerWidth;
-const sliderWidth = (screenWidth * 80) / 100;
-const imageWidth = sliderWidth / 4;
+const sliderWidth = (screenWidth * 90) / 100;
+const imageWidth = sliderWidth / 4 - 15;
 const spaceBetweenImages = imageWidth / 3;
 const imagesWidth = numberOfImages * (imageWidth + spaceBetweenImages);
 const initialPosition = imagesWidth / 2 - sliderWidth / 2;
@@ -43,6 +44,9 @@ carouselSliderContainer.style.width = `${sliderWidth}px`;
 for (const image of carouselImages) {
   image.style.width = `${imageWidth}px`;
   image.style.margin = `5px ${spaceBetweenImages / 2}px`;
+}
+for (const arrow of carouselArrows) {
+  arrow.style.marginTop = `${-imageWidth / 1.5}px`;
 }
 
 // Carousel - Functions

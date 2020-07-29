@@ -34,13 +34,16 @@
   font-size: 1.2em;
 }
 
-.background-image-container i {
-  color: rgb(51, 51, 51);
+.background-image-container a img {
+  fill:red;
+  color: red;
+
+  height: 50px;
 }
 
 .background-image-container .select-background-image {
   background-color: rgba(69, 69, 69, 0.671);
-  width: 100%;
+  width: 98%;
   padding: 1%;
   display: flex;
   justify-content: center;
@@ -76,22 +79,21 @@
 .radio-button input:checked + span {
   background-color: rgb(84, 97, 48);
   border: 5px solid white;
-
 }
 
 /* Carousel Section */
 
 .carousel-container {
   background-color: rgb(69, 69, 69);
+  padding: 3% 2%;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 100%;
   margin: auto;
+  text-align: center;
 }
 
 .carousel-container .carousel-slider-container {
-  border: 1px solid black;
   overflow: hidden;
 }
 
@@ -100,28 +102,62 @@
   display: flex;
 }
 
+.carousel-image {
+  border: 10px solid rgb(105, 105, 105);
+}
+
+.carousel-container h3.carousel-image-title {
+  color: white;
+}
+
+.carousel-text {
+  padding: 2% 10%;
+  color: white;
+  margin-bottom: 50px;
+}
+
+.carousel-container i {
+  color: white;
+}
+
 /* Circle Image Section */
 
 .circle-image-container {
   display: flex;
   justify-content: space-evenly;
-  margin: 2%;
   padding: 2%;
+  background-color: rgb(112, 112, 112);
+  color: white;
 }
 
 .circle-image-container .circle-image {
-  width: 200px;
-  height: 200px;
+  width: 30vw;
+  height: 30vw;
   border-radius: 50%;
-  border: 20px solid grey;
-  margin: 10%;
+  border: 20px solid rgb(49, 49, 49);
+  margin: 1%;
+}
+
+.circle-image-container .circle-image-text-title {
+  padding: 2%;
 }
 
 .circle-image-container .circle-image-text {
-  width: 40%;
+  padding: 2%;
+  margin-bottom: 5px;
 }
 
 /* Accordion */
+
+.accordion-container {
+  padding: 2%;
+  background-color: rgb(180, 180, 180);
+}
+
+.accordion-border {
+  border-radius: 10px;
+  overflow: hidden;
+}
 
 .accordion-toggle {
   display: flex;
@@ -129,6 +165,12 @@
   padding: 10px 30px;
   text-decoration: none;
   transition: all 700ms;
+  background-color: rgb(112, 112, 112);
+  color: white;
+}
+
+.first-accordion-toggle {
+  border-top-left-radius: 10px;
 }
 
 .accordion-content {
