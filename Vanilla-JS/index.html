@@ -21,9 +21,20 @@
       </a>
     </div>
     <div class="select-background-image">
-      <input type="radio" name="selected-image" value="image-1" checked>
-      <input type="radio" name="selected-image" value="image-2">
-      <input type="radio" name="selected-image" value="image-3">
+      <label class="radio-button">
+        <input type="radio" name="selected-image" value="image-1" checked>
+        <span></span>
+      </label>
+      <label class="radio-button">
+        <input type="radio" name="selected-image" value="image-2">
+        <span></span>
+
+      </label>
+      <label class="radio-button">
+        <input type="radio" name="selected-image" value="image-3">
+        <span></span>
+
+      </label>
     </div>
   </div>
   <section class="carousel-container" id="carousel">
@@ -98,14 +109,14 @@
       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus dolore qui temporibus tempora non delectus
       totam architecto, autem id in dolor quas debitis modi exercitationem vero eum quidem harum veritatis.
     </div>
-  
+
   </section>
   <section class="form">
     <form>
-      <input type="text">
-      <input type="text">
-      <input type="text">
-      <textarea name="" id="" cols="30" rows="10"></textarea>
+      <input type="text" name="Nome">
+      <input type="text" name="Email">
+      <input type="text" name="Telefone" data-format="(**) * ****-****" data-mask="(**) * ****-****">
+      <textarea name="Mensagem" id="" cols="30" rows="10"></textarea>
     </form>
   </section>
 

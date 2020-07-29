@@ -1,7 +1,8 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
+  font-family: sans-serif;
 }
 
 /* background-image-container */
@@ -23,25 +24,65 @@
 }
 
 .background-image-container header {
-  padding: 1%;
-  background-color: aqua;
-  width: 100vw;
+  /* box-model */
+  padding: 2%;
+  margin-bottom: 2%;
+  /* colors */
+  background-color: rgba(0, 0, 0, 0);
+  color: rgb(84, 97, 48);
+  width: 90vw;
+  font-size: 1.2em;
 }
 
-a {
-  background-color: red;
-  /* justify-content: start; */
+.background-image-container i {
+  color: rgb(51, 51, 51);
 }
 
 .background-image-container .select-background-image {
-  background-color: rgba(128, 128, 128, 0.671);
+  background-color: rgba(69, 69, 69, 0.671);
   width: 100%;
   padding: 1%;
+  display: flex;
+  justify-content: center;
+}
+
+.select-background-image .radio-button {
+  font-size: 24px;
+  font-weight: 500;
+  color: blue;
+  display: flex;
+  /* background-color: red; */
+}
+
+.radio-button + .radio-button {
+  margin-left: 20px;
+}
+
+.radio-button input[type='radio'] {
+  display: none;
+}
+
+.radio-button span {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: 5px solid rgb(44, 44, 44);
+  background-color: white;
+  display: block;
+  cursor: pointer;
+  transition: all 200ms;
+}
+
+.radio-button input:checked + span {
+  background-color: rgb(84, 97, 48);
+  border: 5px solid white;
+
 }
 
 /* Carousel Section */
 
 .carousel-container {
+  background-color: rgb(69, 69, 69);
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -87,26 +128,24 @@ a {
   justify-content: space-between;
   padding: 10px 30px;
   text-decoration: none;
-}
-
-div.accordion-content {
-  display: flex;
   transition: all 700ms;
 }
 
-div.accordion-content.content-hidden {
+.accordion-content {
   height: 0vh;
   overflow: hidden;
+  transition: all 700ms;
 }
 
-div.accordion-content.content-selected {
+.toggle-selected + .accordion-content {
   height: 100px;
 }
 
-a.accordion-toggle i {
+i {
+  cursor: pointer;
   transition: all 700ms;
 }
 
-a.accordion-toggle i.arrow-selected {
+.toggle-selected i {
   transform: rotate(180deg);
 }

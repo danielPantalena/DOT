@@ -99,21 +99,68 @@ prevButton.addEventListener('click', () => {
 // Accordion
 
 const accordionContainer = document.querySelector('.accordion-container');
-const contents = document.querySelectorAll('.accordion-content');
+const toggles = document.querySelectorAll('.accordion-toggle');
 
 accordionContainer.addEventListener('click', (event) => {
-  if (event === accordionContainer) return null;
-  console.log(event.target.querySelector('i'));
-  const arrow = event.target.querySelector('i');
-  const contentToShow = event.target.nextElementSibling;
-  if (contentToShow.classList.contains('content-selected')) {
-    arrow.classList.remove('arrow-selected')
-    return contentToShow.classList.remove('content-selected');
+  if (!event.target.classList.contains('accordion-toggle')) return null;
+  const accordionToggle = event.target;
+  if (accordionToggle.classList.contains('toggle-selected')) {
+    return accordionToggle.classList.remove('toggle-selected');
   } else {
-    for (content of contents) {
-      content.classList.add('content-hidden');
+    for (let toggle of toggles) {
+      toggle.classList.remove('toggle-selected');
     }
-    arrow.classList.add()
-    return contentToShow.classList.add('content-selected');
+    accordionToggle.classList.add('toggle-selected');
   }
+});
+
+// Mask
+
+function doFormat(x, pattern, mask) {
+  var strippedValue = x.replace(/[^0-9]/g, '');
+  var chars = strippedValue.split('');
+  var count = 0;
+
+  var formatted = '';
+  for (var i = 0; i < pattern.length; i++) {
+    const c = pattern[i];
+    if (chars[count]) {
+      if (/\*/.test(c)) {
+        formatted += chars[count];
+        count++;
+      } else {
+        formatted += c;
+      }
+    } else if (mask) {
+      if (mask.split('')[i]) formatted += mask.split('')[i];
+    }
+  }
+  return formatted;
+}
+
+document.querySelectorAll('[data-mask]').forEach((elementWithMask) => {
+  const format = (elem) => {
+    const val = doFormat(elem.value, elem.getAttribute('data-format'));
+    elem.value = doFormat(
+      elem.value,
+      elem.getAttribute('data-format'),
+      elem.getAttribute('data-mask'),
+    );
+
+    if (elem.createTextRange) {
+      var range = elem.createTextRange();
+      range.move('character', val.length);
+      range.select();
+    } else if (elem.selectionStart) {
+      elem.focus();
+      elem.setSelectionRange(val.length, val.length);
+    }
+  };
+  elementWithMask.addEventListener('keyup', function () {
+    format(elementWithMask);
+  });
+  elementWithMask.addEventListener('keydown', function () {
+    format(elementWithMask);
+  });
+  format(elementWithMask);
 });
