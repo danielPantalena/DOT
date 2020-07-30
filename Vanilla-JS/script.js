@@ -8,10 +8,10 @@ selectBackgroundImage.addEventListener('click', (e) => {
       backgroundImage.style.backgroundImage = "url('../images/lf_background_trees.jpg')";
       break;
     case 'image-2':
-      backgroundImage.style.backgroundImage = "url('../images/Earth-Horizon.jpg')";
+      backgroundImage.style.backgroundImage = "url('../images/tower-1800x1013.jpg')";
       break;
     case 'image-3':
-      backgroundImage.style.backgroundImage = "url('../images/Green.jpg')";
+      backgroundImage.style.backgroundImage = "url('../images/cartoon-1800x1013.jpg')";
       break;
     default:
       return null;
