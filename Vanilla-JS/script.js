@@ -5,7 +5,7 @@ selectBackgroundImage.addEventListener('click', (e) => {
   if (e.target === selectBackgroundImage) return null;
   switch (e.target.value) {
     case 'image-1':
-      backgroundImage.style.backgroundImage = "url('../images/Beach-Sunset.jpg')";
+      backgroundImage.style.backgroundImage = "url('../images/lf_background_trees.jpg')";
       break;
     case 'image-2':
       backgroundImage.style.backgroundImage = "url('../images/Earth-Horizon.jpg')";
@@ -28,14 +28,14 @@ const carouselImages = document.querySelectorAll('.carousel-slider img.carousel-
 // Carousel - buttons
 const prevButton = document.getElementById('previous-button');
 const nextButton = document.getElementById('next-button');
-const carouselArrows = document.querySelectorAll('.carousel-container i');
+const carouselArrows = document.querySelectorAll('.carousel-container .carousel-arrow');
 
 // Carousel - dimensions
 const numberOfImages = carouselImages.length;
 const screenWidth = window.innerWidth;
-const sliderWidth = (screenWidth * 90) / 100;
-const imageWidth = sliderWidth / 4 - 15;
-const spaceBetweenImages = imageWidth / 3;
+const sliderWidth = (screenWidth * 80) / 100;
+const imageWidth = sliderWidth / 3.5;
+const spaceBetweenImages = imageWidth / 6;
 const imagesWidth = numberOfImages * (imageWidth + spaceBetweenImages);
 const initialPosition = imagesWidth / 2 - sliderWidth / 2;
 

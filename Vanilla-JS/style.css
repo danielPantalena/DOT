@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
   font-family: sans-serif;
 }
 
@@ -14,7 +14,7 @@
   align-items: center;
   justify-content: space-between;
   /* background-image */
-  background-image: url('../images/Beach-Sunset.jpg');
+  background-image: url('../images/lf_background_trees.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -34,14 +34,11 @@
   font-size: 1.2em;
 }
 
-.background-image-container a img {
-  fill:red;
-  color: red;
-
+a img.background-image-arrow {
   height: 50px;
 }
 
-.background-image-container .select-background-image {
+.select-background-image {
   background-color: rgba(69, 69, 69, 0.671);
   width: 98%;
   padding: 1%;
@@ -57,7 +54,7 @@
   /* background-color: red; */
 }
 
-.radio-button + .radio-button {
+.select-background-image .radio-button + .radio-button {
   margin-left: 20px;
 }
 
@@ -93,11 +90,25 @@
   text-align: center;
 }
 
-.carousel-container .carousel-slider-container {
+.carousel-arrow {
+  cursor: pointer;
+}
+
+.carousel-prev-arrow {
+  height: 40px;
+  transform: rotate(90deg);
+}
+
+.carousel-next-arrow {
+  height: 40px;
+  transform: rotate(-90deg);
+}
+
+.carousel-slider-container {
   overflow: hidden;
 }
 
-.carousel-container .carousel-slider {
+.carousel-slider {
   width: 100%;
   display: flex;
 }
@@ -155,39 +166,63 @@
 }
 
 .accordion-border {
-  border-radius: 10px;
+  border-radius: 15px;
   overflow: hidden;
 }
 
 .accordion-toggle {
   display: flex;
+  margin-bottom: 1px;
   justify-content: space-between;
   padding: 10px 30px;
   text-decoration: none;
-  transition: all 700ms;
+  transition: all 500ms;
   background-color: rgb(112, 112, 112);
   color: white;
 }
 
-.first-accordion-toggle {
-  border-top-left-radius: 10px;
+.accordion-arrow {
+  color: white;
+  transition: all 500ms;
 }
 
 .accordion-content {
+  display: flex;
+  align-items: center;
   height: 0vh;
   overflow: hidden;
-  transition: all 700ms;
+  transition: all 500ms;
+  background-color: rgb(112, 112, 112);
+  color: white;
+  opacity: 0;
+}
+
+.accordion-image {
+  margin: 0% 1%;
+  border: 5px solid rgb(112,112,112);
+  height: 80%;
+}
+
+.accordion-text {
+  padding: 2%;
+  margin: 2%;
+}
+
+.toggle-selected.accordion-toggle {
+  background-color: white;
+  margin-bottom: -10px;
+  color: rgb(112, 112, 112);
+}
+
+.toggle-selected .accordion-arrow {
+  color: rgb(112,112,112);
+  transform: rotate(180deg);
 }
 
 .toggle-selected + .accordion-content {
-  height: 100px;
-}
-
-i {
-  cursor: pointer;
-  transition: all 700ms;
-}
-
-.toggle-selected i {
-  transform: rotate(180deg);
+  opacity: 1;
+  height: 200px;
+  background-color: white;
+  color: rgb(112, 112, 112);
+  padding: 2%;
 }
