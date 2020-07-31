@@ -40,7 +40,7 @@ a img.background-image-arrow {
 
 .select-background-image {
   background-color: rgba(69, 69, 69, 0.671);
-  width: 98%;
+  width: 100%;
   padding: 1%;
   display: flex;
   justify-content: center;
