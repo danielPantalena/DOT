@@ -15,22 +15,30 @@
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
-  flex-flow: column;
+  flex-flow: column-reverse;
   height: 100vh;
   justify-content: space-between;
   text-align: center;
 }
 
-.background-image-container header {
-  background-color: rgba(0, 0, 0, 0);
-  color: rgb(84, 97, 48);
-  font-size: 1.2em;
-  margin-bottom: 2%;
-  padding: 2%;
-  width: 90vw;
+.mobile-header {
+  align-items: center;
+  background-color: rgb(69, 69, 69);
+  color: white;
+  display: flex;
+  flex-flow: column;
+  height: 100px;
+  justify-content: center;
+  padding: 4%;
+  text-align: center;
 }
 
-a img.background-image-arrow {
+.desktop-header {
+  display: none;
+}
+
+.background-image-arrow {
+  margin-top: 20px;
   height: 50px;
 }
 
@@ -62,8 +70,28 @@ a img.background-image-arrow {
 }
 
 .radio-button input:checked + span {
-  background-color: rgb(84, 97, 48);
+  background-color: rgb(56, 63, 37);
   border: 5px solid white;
+}
+
+@media only screen and (min-width: 900px) {
+  .background-image-container {
+    flex-flow: column;
+  }
+
+  .mobile-header {
+    display: none;
+  }
+
+  .desktop-header {
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(56, 63, 37);
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: 2%;
+    padding: 2%;
+    width: 90vw;
+  }
 }
 
 /* Carousel Section */
@@ -179,6 +207,7 @@ a img.background-image-arrow {
 .circle-image-text {
   margin-bottom: 5px;
   padding: 2%;
+  text-align: center;
 }
 
 @media only screen and (min-width: 800px) {
@@ -189,6 +218,10 @@ a img.background-image-arrow {
   .circle-image {
     height: 40vw;
     width: 40vw;
+  }
+
+  .circle-image-text {
+    text-align: left;
   }
 }
 
