@@ -87,6 +87,7 @@ a img.background-image-arrow {
 
 .carousel-arrow {
   cursor: pointer;
+  align-self: flex-start;
 }
 
 .carousel-prev-arrow {

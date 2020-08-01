@@ -45,13 +45,13 @@ const setCarouselDimensions = () => {
   let spaceBetweenImages = (10 / 100) * sliderContainerWidth;
   carouselPosition = initialCarouselPosition;
   lastCarouselPosition = 9;
-  let largeScreen = screenWidth > 800;
+  let largeScreen = screenWidth > 900;
   if (largeScreen) {
     imageWidth = ((90 / 100) * sliderContainerWidth) / 3;
     spaceBetweenImages = ((10 / 100) * sliderContainerWidth) / 3;
     lastCarouselPosition = 3;
     for (const arrow of carouselArrows) {
-      arrow.style.marginTop = `${-imageWidth * 0.5}px`;
+      arrow.style.marginTop = `${imageWidth * 0.25}px`;
     }
   }
   carouselSliderContainer.style.width = `${sliderContainerWidth}px`;
