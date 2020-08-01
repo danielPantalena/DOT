@@ -1,37 +1,32 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-/* background-image-container */
+/* Background Image Section  */
 
 .background-image-container {
-  /* display flex */
-  display: flex;
-  flex-flow: column;
   align-items: center;
-  justify-content: space-between;
-  /* background-image */
   background-image: url('../images/lf_background_trees.jpg');
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
-  /* container */
+  display: flex;
+  flex-flow: column;
   height: 100vh;
+  justify-content: space-between;
   text-align: center;
 }
 
 .background-image-container header {
-  /* box-model */
-  padding: 2%;
-  margin-bottom: 2%;
-  /* colors */
   background-color: rgba(0, 0, 0, 0);
   color: rgb(84, 97, 48);
-  width: 90vw;
   font-size: 1.2em;
+  margin-bottom: 2%;
+  padding: 2%;
+  width: 90vw;
 }
 
 a img.background-image-arrow {
@@ -40,18 +35,17 @@ a img.background-image-arrow {
 
 .select-background-image {
   background-color: rgba(69, 69, 69, 0.671);
-  width: 100%;
-  padding: 1%;
   display: flex;
   justify-content: center;
+  padding: 1%;
+  width: 100%;
 }
 
 .select-background-image .radio-button {
-  font-size: 24px;
-  font-weight: 500;
   color: blue;
   display: flex;
-  /* background-color: red; */
+  font-size: 24px;
+  font-weight: 500;
 }
 
 .select-background-image .radio-button + .radio-button {
@@ -63,14 +57,14 @@ a img.background-image-arrow {
 }
 
 .radio-button span {
-  height: 30px;
-  width: 30px;
+  background-color: white;
   border-radius: 50%;
   border: 5px solid rgb(44, 44, 44);
-  background-color: white;
-  display: block;
   cursor: pointer;
+  display: block;
+  height: 30px;
   transition: all 200ms;
+  width: 30px;
 }
 
 .radio-button input:checked + span {
@@ -81,12 +75,12 @@ a img.background-image-arrow {
 /* Carousel Section */
 
 .carousel-container {
-  background-color: rgb(69, 69, 69);
-  padding: 3% 2%;
-  display: flex;
   align-items: center;
+  background-color: rgb(69, 69, 69);
+  display: flex;
   justify-content: space-evenly;
   margin: auto;
+  padding: 2% 4%;
   text-align: center;
 }
 
@@ -109,8 +103,8 @@ a img.background-image-arrow {
 }
 
 .carousel-slider {
-  width: 100%;
   display: flex;
+  width: 100%;
 }
 
 .carousel-image {
@@ -122,9 +116,9 @@ a img.background-image-arrow {
 }
 
 .carousel-text {
-  padding: 2% 10%;
   color: white;
   margin-bottom: 50px;
+  padding: 2% 10%;
 }
 
 .carousel-container i {
@@ -134,19 +128,19 @@ a img.background-image-arrow {
 /* Circle Image Section */
 
 .circle-image-container {
-  display: flex;
-  justify-content: space-evenly;
-  padding: 2%;
   background-color: rgb(112, 112, 112);
   color: white;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2% 4%;
 }
 
 .circle-image-container .circle-image {
-  width: 30vw;
-  height: 30vw;
   border-radius: 50%;
   border: 20px solid rgb(49, 49, 49);
+  height: 30vw;
   margin: 1%;
+  width: 30vw;
 }
 
 .circle-image-container .circle-image-text-title {
@@ -154,15 +148,15 @@ a img.background-image-arrow {
 }
 
 .circle-image-container .circle-image-text {
-  padding: 2%;
   margin-bottom: 5px;
+  padding: 2%;
 }
 
-/* Accordion */
+/* Accordion Section */
 
 .accordion-container {
-  padding: 2%;
   background-color: rgb(180, 180, 180);
+  padding: 2% 4%;
 }
 
 .accordion-border {
@@ -171,14 +165,14 @@ a img.background-image-arrow {
 }
 
 .accordion-toggle {
+  background-color: rgb(112, 112, 112);
+  color: white;
   display: flex;
-  margin-bottom: 1px;
   justify-content: space-between;
+  margin-bottom: 1px;
   padding: 10px 30px;
   text-decoration: none;
   transition: all 500ms;
-  background-color: rgb(112, 112, 112);
-  color: white;
 }
 
 .accordion-arrow {
@@ -187,42 +181,106 @@ a img.background-image-arrow {
 }
 
 .accordion-content {
-  display: flex;
   align-items: center;
-  height: 0vh;
-  overflow: hidden;
-  transition: all 500ms;
   background-color: rgb(112, 112, 112);
   color: white;
+  display: flex;
+  height: 0vh;
   opacity: 0;
+  overflow: hidden;
+  transition: all 500ms;
 }
 
 .accordion-image {
-  margin: 0% 1%;
-  border: 5px solid rgb(112,112,112);
+  border: 5px solid rgb(112, 112, 112);
   height: 80%;
+  margin: 0% 1%;
 }
 
 .accordion-text {
-  padding: 2%;
   margin: 2%;
+  padding: 2%;
 }
 
 .toggle-selected.accordion-toggle {
   background-color: white;
-  margin-bottom: -10px;
   color: rgb(112, 112, 112);
+  margin-bottom: -10px;
 }
 
 .toggle-selected .accordion-arrow {
-  color: rgb(112,112,112);
+  color: rgb(112, 112, 112);
   transform: rotate(180deg);
 }
 
 .toggle-selected + .accordion-content {
-  opacity: 1;
-  height: 200px;
   background-color: white;
   color: rgb(112, 112, 112);
+  height: 200px;
+  opacity: 1;
   padding: 2%;
+}
+
+/* Form */
+
+.form-container form {
+  align-items: center;
+  background-image: linear-gradient(to bottom right, rgb(112, 112, 112) 50%, rgb(69, 69, 69) 50%);
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  padding: 2% 4%;
+}
+
+.form-container input {
+  background-color: rgb(180, 180, 180);
+  border-radius: 7px;
+  border: none;
+  height: 40px;
+  margin: 1% 0;
+  width: 100%;
+}
+
+.responsive-inputs {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.responsive-input {
+  width: 100%;
+}
+
+.responsive-input + .responsive-input {
+  margin-left: 20px;
+}
+
+.form-container textarea {
+  background-color: rgb(180, 180, 180);
+  border-radius: 7px;
+  border: none;
+  margin: 1% 0;
+  width: 100%;
+}
+
+input.submit-button {
+  background-color: white;
+  color: rgb(49, 49, 49);
+  cursor: pointer;
+  font-weight: 800;
+  width: 100px;
+}
+
+/* Footer */
+
+footer {
+  align-items: center;
+  background-color: rgb(44, 44, 44);
+  color: white;
+  display: flex;
+  font-weight: 900;
+  height: 80px;
+  justify-content: center;
+  padding: 2%;
+  text-align: center;
 }

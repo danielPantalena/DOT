@@ -50,16 +50,14 @@ const setCarouselDimensions = () => {
     imageWidth = ((90 / 100) * sliderContainerWidth) / 3;
     spaceBetweenImages = ((10 / 100) * sliderContainerWidth) / 3;
     lastCarouselPosition = 3;
+    for (const arrow of carouselArrows) {
+      arrow.style.marginTop = `${-imageWidth * 0.5}px`;
+    }
   }
-
-  // Carousel - Set dimensions
   carouselSliderContainer.style.width = `${sliderContainerWidth}px`;
   for (const image of carouselImages) {
     image.style.width = `${imageWidth}px`;
     image.style.margin = `5px ${spaceBetweenImages / 2}px`;
-  }
-  for (const arrow of carouselArrows) {
-    arrow.style.marginTop = `${-imageWidth * 1.2}px`;
   }
 };
 
