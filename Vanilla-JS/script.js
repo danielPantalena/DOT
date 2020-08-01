@@ -126,8 +126,14 @@ const accordionContainer = document.querySelector('.accordion-container');
 const toggles = document.querySelectorAll('.accordion-toggle');
 
 accordionContainer.addEventListener('click', (event) => {
-  if (!event.target.classList.contains('accordion-toggle')) return null;
-  const accordionToggle = event.target;
+  let accordionToggle;
+  if (
+    event.target.classList.contains('accordion-arrow') ||
+    event.target.classList.contains('accordion-title')
+  )
+    accordionToggle = event.target.parentNode;
+  else if (event.target.classList.contains('accordion-toggle')) accordionToggle = event.target;
+  else return null;
   if (accordionToggle.classList.contains('toggle-selected')) {
     return accordionToggle.classList.remove('toggle-selected');
   } else {

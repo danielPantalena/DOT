@@ -15,8 +15,8 @@
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
-  flex-flow: column-reverse;
-  height: 100vh;
+  flex-flow: column;
+  height: 40vh;
   justify-content: space-between;
   text-align: center;
 }
@@ -77,9 +77,14 @@
 @media only screen and (min-width: 900px) {
   .background-image-container {
     flex-flow: column;
+    height: 100vh;
   }
 
   .mobile-header {
+    display: none;
+  }
+
+  .mobile-header-arrow {
     display: none;
   }
 
@@ -251,6 +256,7 @@
 .accordion-arrow {
   color: white;
   transition: all 500ms;
+  padding: -200px;
 }
 
 .accordion-content {
