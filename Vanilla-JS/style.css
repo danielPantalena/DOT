@@ -35,7 +35,7 @@
 
 .mobile-header-text {
   padding: 2%;
-  width: 80vw;
+  width: 60vw;
 }
 
 .desktop-header {
@@ -286,6 +286,8 @@
 .accordion-text {
   margin: 2%;
   padding: 4%;
+  width: 85vw;
+  text-align: center;
 }
 
 .toggle-selected.accordion-toggle {
@@ -302,7 +304,7 @@
 .toggle-selected + .accordion-content {
   background-color: white;
   color: rgb(112, 112, 112);
-  height: 70vh;
+  height: 40vh;
   opacity: 1;
   padding: 1%;
 }
