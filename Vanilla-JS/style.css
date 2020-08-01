@@ -29,8 +29,13 @@
   flex-flow: column;
   height: 100px;
   justify-content: center;
-  padding: 4%;
+  padding: 2%;
   text-align: center;
+}
+
+.mobile-header-text {
+  padding: 2%;
+  width: 80vw;
 }
 
 .desktop-header {
@@ -74,7 +79,7 @@
   border: 5px solid white;
 }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 800px) {
   .background-image-container {
     flex-flow: column;
     height: 100vh;
@@ -171,7 +176,7 @@
   color: white;
 }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 800px) {
   .carousel-container {
     flex-flow: row;
   }
@@ -247,8 +252,9 @@
   color: white;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 1px;
-  padding: 10px 30px;
+  padding: 20px 30px;
   text-decoration: none;
   transition: all 500ms;
 }
@@ -264,6 +270,7 @@
   background-color: rgb(112, 112, 112);
   color: white;
   display: flex;
+  flex-flow: column;
   height: 0vh;
   opacity: 0;
   overflow: hidden;
@@ -271,14 +278,14 @@
 }
 
 .accordion-image {
-  border: 5px solid rgb(112, 112, 112);
-  height: 80%;
+  border: 12px solid rgb(112, 112, 112);
+  width: 75vw;
   margin: 0% 1%;
 }
 
 .accordion-text {
   margin: 2%;
-  padding: 2%;
+  padding: 4%;
 }
 
 .toggle-selected.accordion-toggle {
@@ -295,9 +302,23 @@
 .toggle-selected + .accordion-content {
   background-color: white;
   color: rgb(112, 112, 112);
-  height: 200px;
+  height: 70vh;
   opacity: 1;
-  padding: 2%;
+  padding: 1%;
+}
+
+@media only screen and (min-width: 800px) {
+  .accordion-content {
+    flex-flow: row;
+  }
+
+  .toggle-selected + .accordion-content {
+    height: 25vw;
+  }
+
+  .accordion-image {
+    width: 35vw;
+  }
 }
 
 /* Form */

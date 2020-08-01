@@ -40,13 +40,14 @@ const initialCarouselPosition = 0;
 
 const setCarouselDimensions = () => {
   const screenWidth = window.innerWidth;
-  sliderContainerWidth = (screenWidth * 80) / 100;
+  sliderContainerWidth = (screenWidth * 90) / 100;
   let imageWidth = (90 / 100) * sliderContainerWidth;
   let spaceBetweenImages = (10 / 100) * sliderContainerWidth;
   carouselPosition = initialCarouselPosition;
   lastCarouselPosition = 9;
-  let largeScreen = screenWidth > 900;
+  let largeScreen = screenWidth > 800;
   if (largeScreen) {
+    sliderContainerWidth = (screenWidth * 80) / 100;
     imageWidth = ((90 / 100) * sliderContainerWidth) / 3;
     spaceBetweenImages = ((10 / 100) * sliderContainerWidth) / 3;
     lastCarouselPosition = 3;
