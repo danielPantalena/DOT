@@ -26,8 +26,8 @@ const carouselSlider = document.querySelector('.carousel-slider');
 const carouselImages = document.querySelectorAll('img.carousel-image');
 
 // Carousel - Buttons
-const prevButton = document.getElementById('previous-button');
-const nextButton = document.getElementById('next-button');
+const prevButtons = document.querySelectorAll('.carousel-prev-arrow');
+const nextButtons = document.querySelectorAll('.carousel-next-arrow');
 const carouselArrows = document.querySelectorAll('.carousel-container .carousel-arrow');
 
 // Carousel - Dimensions
@@ -94,27 +94,31 @@ window.addEventListener('resize', () => {
   setSliderPosition();
 });
 
-nextButton.addEventListener('click', () => {
-  if (carouselPosition < lastCarouselPosition) {
-    nextImage();
-  } else {
-    removeSliderAnimation();
-    carouselPosition = 0;
-    setSliderPosition();
-    setTimeout(nextImage, 10);
-  }
-});
+for (const nextButton of nextButtons) {
+  nextButton.addEventListener('click', () => {
+    if (carouselPosition < lastCarouselPosition) {
+      nextImage();
+    } else {
+      removeSliderAnimation();
+      carouselPosition = 0;
+      setSliderPosition();
+      setTimeout(nextImage, 10);
+    }
+  });
+}
 
-prevButton.addEventListener('click', () => {
-  if (carouselPosition > 0) {
-    prevImage();
-  } else {
-    removeSliderAnimation();
-    carouselPosition = lastCarouselPosition;
-    setSliderPosition();
-    setTimeout(prevImage, 10);
-  }
-});
+for (const prevButton of prevButtons) {
+  prevButton.addEventListener('click', () => {
+    if (carouselPosition > 0) {
+      prevImage();
+    } else {
+      removeSliderAnimation();
+      carouselPosition = lastCarouselPosition;
+      setSliderPosition();
+      setTimeout(prevImage, 10);
+    }
+  });
+}
 
 // Accordion
 

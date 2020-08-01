@@ -42,13 +42,6 @@ a img.background-image-arrow {
   width: 100%;
 }
 
-.select-background-image .radio-button {
-  color: blue;
-  display: flex;
-  font-size: 24px;
-  font-weight: 500;
-}
-
 .select-background-image .radio-button + .radio-button {
   margin-left: 20px;
 }
@@ -79,6 +72,7 @@ a img.background-image-arrow {
   align-items: center;
   background-color: rgb(69, 69, 69);
   display: flex;
+  flex-flow: column;
   justify-content: space-evenly;
   margin: auto;
   padding: 2% 4%;
@@ -88,6 +82,23 @@ a img.background-image-arrow {
 .carousel-arrow {
   cursor: pointer;
   align-self: flex-start;
+}
+
+.carousel-container .image-container {
+  margin-bottom: -50px;
+}
+
+.carousel-mobile-arrows {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: -100px 20px;
+  margin-bottom: 10px;
+}
+
+.carousel-desktop-arrow {
+  display: none;
 }
 
 .carousel-prev-arrow {
@@ -120,11 +131,25 @@ a img.background-image-arrow {
 .carousel-text {
   color: white;
   margin-bottom: 50px;
-  padding: 2% 10%;
+  padding: 2% 5%;
 }
 
 .carousel-container i {
   color: white;
+}
+
+@media only screen and (min-width: 900px) {
+  .carousel-container {
+    flex-flow: row;
+  }
+
+  .carousel-mobile-arrows {
+    display: none;
+  }
+
+  .carousel-desktop-arrow {
+    display: block;
+  }
 }
 
 /* Circle Image Section */
@@ -133,25 +158,38 @@ a img.background-image-arrow {
   background-color: rgb(112, 112, 112);
   color: white;
   display: flex;
+  align-items: center;
+  flex-flow: column;
   justify-content: space-evenly;
   padding: 2% 4%;
 }
 
-.circle-image-container .circle-image {
+.circle-image {
   border-radius: 50%;
   border: 20px solid rgb(49, 49, 49);
-  height: 30vw;
+  height: 80vw;
   margin: 1%;
-  width: 30vw;
+  width: 80vw;
 }
 
-.circle-image-container .circle-image-text-title {
+.circle-image-text-title {
   padding: 2%;
 }
 
-.circle-image-container .circle-image-text {
+.circle-image-text {
   margin-bottom: 5px;
   padding: 2%;
+}
+
+@media only screen and (min-width: 800px) {
+  .circle-image-container {
+    flex-flow: row;
+  }
+
+  .circle-image {
+    height: 40vw;
+    width: 40vw;
+  }
 }
 
 /* Accordion Section */
