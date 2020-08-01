@@ -19,38 +19,56 @@ selectBackgroundImage.addEventListener('click', (e) => {
 });
 
 // Carousel
-const carouselSliderContainer = document.querySelector(
-  '.carousel-container .carousel-slider-container',
-);
-const carouselSlider = document.querySelector('.carousel-slider');
-const carouselImages = document.querySelectorAll('.carousel-slider img.carousel-image');
 
-// Carousel - buttons
+// Carousel - Elements
+const carouselSliderContainer = document.querySelector('.carousel-slider-container');
+const carouselSlider = document.querySelector('.carousel-slider');
+const carouselImages = document.querySelectorAll('img.carousel-image');
+
+// Carousel - Buttons
 const prevButton = document.getElementById('previous-button');
 const nextButton = document.getElementById('next-button');
 const carouselArrows = document.querySelectorAll('.carousel-container .carousel-arrow');
 
-// Carousel - dimensions
-const numberOfImages = carouselImages.length;
-const screenWidth = window.innerWidth;
-const sliderWidth = (screenWidth * 80) / 100;
-const imageWidth = sliderWidth / 3.5;
-const spaceBetweenImages = imageWidth / 6;
-const imagesWidth = numberOfImages * (imageWidth + spaceBetweenImages);
-const initialPosition = imagesWidth / 2 - sliderWidth / 2;
-
-// Carousel - Set dimensions
-carouselSliderContainer.style.width = `${sliderWidth}px`;
-for (const image of carouselImages) {
-  image.style.width = `${imageWidth}px`;
-  image.style.margin = `5px ${spaceBetweenImages / 2}px`;
-}
-for (const arrow of carouselArrows) {
-  arrow.style.marginTop = `${-imageWidth / 1.5}px`;
-}
+// Carousel - Dimensions
+let carouselPosition;
+let lastCarouselPosition;
+let sliderContainerWidth;
+const initialCarouselPosition = 0;
 
 // Carousel - Functions
-let position = 0;
+
+const setCarouselDimensions = () => {
+  const screenWidth = window.innerWidth;
+  sliderContainerWidth = (screenWidth * 80) / 100;
+  let imageWidth = (90 / 100) * sliderContainerWidth;
+  let spaceBetweenImages = (10 / 100) * sliderContainerWidth;
+  carouselPosition = initialCarouselPosition;
+  lastCarouselPosition = 9;
+  let largeScreen = screenWidth > 800;
+  if (largeScreen) {
+    imageWidth = ((90 / 100) * sliderContainerWidth) / 3;
+    spaceBetweenImages = ((10 / 100) * sliderContainerWidth) / 3;
+    lastCarouselPosition = 3;
+  }
+
+  // Carousel - Set dimensions
+  carouselSliderContainer.style.width = `${sliderContainerWidth}px`;
+  for (const image of carouselImages) {
+    image.style.width = `${imageWidth}px`;
+    image.style.margin = `5px ${spaceBetweenImages / 2}px`;
+  }
+  for (const arrow of carouselArrows) {
+    arrow.style.marginTop = `${-imageWidth * 1.2}px`;
+  }
+};
+
+setCarouselDimensions();
+
+const setSliderPosition = () => {
+  carouselSlider.style.transform = `translateX(${-sliderContainerWidth * carouselPosition}px)`;
+  return carouselPosition;
+};
 
 const addSliderAnimation = () => {
   carouselSlider.style.transition = 'transform 1200ms ease-in-out';
@@ -60,43 +78,43 @@ const removeSliderAnimation = () => {
   carouselSlider.style.transition = 'none';
 };
 
-const setSliderPosition = () => {
-  carouselSlider.style.transform = `translateX(${-sliderWidth * position}px)`;
-  return position;
-};
-
 const nextImage = () => {
   addSliderAnimation();
-  position++;
+  carouselPosition++;
   setSliderPosition();
 };
 
 const prevImage = () => {
   addSliderAnimation();
-  position--;
+  carouselPosition--;
   setSliderPosition();
 };
 
 // Carousel - Listeners
+window.addEventListener('resize', () => {
+  setCarouselDimensions();
+  setSliderPosition();
+});
+
 nextButton.addEventListener('click', () => {
-  if (position < 3) {
+  if (carouselPosition < lastCarouselPosition) {
     nextImage();
   } else {
     removeSliderAnimation();
-    position = 0;
+    carouselPosition = 0;
     setSliderPosition();
-    setTimeout(nextImage, 1);
+    setTimeout(nextImage, 10);
   }
 });
 
 prevButton.addEventListener('click', () => {
-  if (position > 0) {
+  if (carouselPosition > 0) {
     prevImage();
   } else {
     removeSliderAnimation();
-    position = 3;
+    carouselPosition = lastCarouselPosition;
     setSliderPosition();
-    setTimeout(prevImage, 1);
+    setTimeout(prevImage, 10);
   }
 });
 
