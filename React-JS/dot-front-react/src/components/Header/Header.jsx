@@ -1,4 +1,5 @@
 import React from 'react';
+import backgroundTrees from '../../images/lf_background_trees.jpg'
 import './Header.css';
 
 const Header = () => {
@@ -10,7 +11,7 @@ const Header = () => {
       </header>
       <div className="background-image-container">
         <a href="#carousel" className="mobile-header-arrow">
-          <img className="background-image-arrow" src="../images/arrow-grey.svg" alt="arrow" />
+          <img className="background-image-arrow" src={backgroundTrees} alt="arrow" />
         </a>
         <div className="desktop-header">
           <header>
@@ -18,7 +19,7 @@ const Header = () => {
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
           </header>
           <a href="#carousel">
-            <img className="background-image-arrow" src="../images/arrow-grey.svg" alt="arrow" />
+            <img className="background-image-arrow" src={backgroundTrees} alt="arrow" />
           </a>
         </div>
         <div className="select-background-image">
