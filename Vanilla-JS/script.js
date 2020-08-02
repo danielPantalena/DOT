@@ -1,21 +1,28 @@
+// Background Image
+
 const backgroundImage = document.querySelector('.background-image-container');
 const selectBackgroundImage = document.querySelector('.select-background-image');
 
 selectBackgroundImage.addEventListener('click', (e) => {
   if (e.target === selectBackgroundImage) return null;
-  switch (e.target.value) {
-    case 'image-1':
-      backgroundImage.style.backgroundImage = "url('../images/lf_background_trees.jpg')";
-      break;
-    case 'image-2':
-      backgroundImage.style.backgroundImage = "url('../images/tower-1800x1013.jpg')";
-      break;
-    case 'image-3':
-      backgroundImage.style.backgroundImage = "url('../images/cartoon-1800x1013.jpg')";
-      break;
-    default:
-      return null;
-  }
+  backgroundImage.style.opacity = '0';
+  const updateBackgroundImage = () => {
+    switch (e.target.value) {
+      case 'image-1':
+        backgroundImage.style.backgroundImage = "url('../images/lf_background_trees.jpg')";
+        break;
+      case 'image-2':
+        backgroundImage.style.backgroundImage = "url('../images/tower-1800x1013.jpg')";
+        break;
+      case 'image-3':
+        backgroundImage.style.backgroundImage = "url('../images/cartoon-1800x1013.jpg')";
+        break;
+      default:
+        return null;
+    }
+  };
+  setTimeout(updateBackgroundImage, 100);
+  return setTimeout(() => (backgroundImage.style.opacity = '1'), 100);
 });
 
 // Carousel
@@ -145,7 +152,9 @@ accordionContainer.addEventListener('click', (event) => {
   }
 });
 
-// Mask
+// Form
+
+// Form - Mask
 
 document.getElementById('phone-input').addEventListener('input', (event) => {
   let phoneNumber = event.target.value;
@@ -156,3 +165,14 @@ document.getElementById('phone-input').addEventListener('input', (event) => {
   }
   event.target.value = phoneNumber;
 });
+
+// Form - Validation
+
+const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+const validateEmail = (email) => {
+  const isValid = emailRegex.test(email);
+  console.log(isValid);
+};
+
+
