@@ -1,0 +1,26 @@
+.mobile-header {
+  align-items: center;
+  background-color: rgb(69, 69, 69);
+  color: white;
+  display: flex;
+  flex-flow: column;
+  height: 100px;
+  justify-content: center;
+  padding: 2%;
+  text-align: center;
+}
+
+.mobile-header-text {
+  padding: 2%;
+  width: 60vw;
+}
+
+@media only screen and (min-width: 800px) {
+  .mobile-header {
+    display: none;
+  }
+
+  .mobile-header-arrow {
+    display: none;
+  }
+}

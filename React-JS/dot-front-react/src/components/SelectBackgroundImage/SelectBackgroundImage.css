@@ -16,6 +16,9 @@
   height: 40px;
   transition: all 200ms;
   width: 40px;
+}
+
+.select-background-button:focus {
   outline: none;
 }
 
