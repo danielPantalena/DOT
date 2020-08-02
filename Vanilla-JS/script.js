@@ -1,8 +1,10 @@
 // Background Image
 
+// Background - Elements
 const backgroundImage = document.querySelector('.background-image-container');
 const selectBackgroundImage = document.querySelector('.select-background-image');
 
+// Background - Listener
 selectBackgroundImage.addEventListener('click', (e) => {
   if (e.target === selectBackgroundImage) return null;
   backgroundImage.style.opacity = '0';
@@ -31,8 +33,6 @@ selectBackgroundImage.addEventListener('click', (e) => {
 const carouselSliderContainer = document.querySelector('.carousel-slider-container');
 const carouselSlider = document.querySelector('.carousel-slider');
 const carouselImages = document.querySelectorAll('img.carousel-image');
-
-// Carousel - Buttons
 const prevButtons = document.querySelectorAll('.carousel-prev-arrow');
 const nextButtons = document.querySelectorAll('.carousel-next-arrow');
 const carouselArrows = document.querySelectorAll('.carousel-container .carousel-arrow');
@@ -44,7 +44,6 @@ let sliderContainerWidth;
 const initialCarouselPosition = 0;
 
 // Carousel - Functions
-
 const setCarouselDimensions = () => {
   const screenWidth = window.innerWidth;
   sliderContainerWidth = (screenWidth * 90) / 100;
@@ -130,9 +129,11 @@ for (const prevButton of prevButtons) {
 
 // Accordion
 
+// Accordion - Elements
 const accordionContainer = document.querySelector('.accordion-container');
 const toggles = document.querySelectorAll('.accordion-toggle');
 
+// Accordion - Listener
 accordionContainer.addEventListener('click', (event) => {
   let accordionToggle;
   if (
@@ -155,7 +156,6 @@ accordionContainer.addEventListener('click', (event) => {
 // Form
 
 // Form - Mask
-
 document.getElementById('phone-input').addEventListener('input', (event) => {
   let phoneNumber = event.target.value;
   phoneNumber = phoneNumber.replace(/\D/g, '');
@@ -166,7 +166,7 @@ document.getElementById('phone-input').addEventListener('input', (event) => {
   event.target.value = phoneNumber;
 });
 
-// Form - Validation
+// Form - Elements
 const form = document.querySelector('.form-container form');
 const nameInput = document.getElementById('name-input');
 const emailInput = document.getElementById('email-input');
@@ -174,9 +174,12 @@ const phoneInput = document.getElementById('phone-input');
 const messageTextArea = document.getElementById('message-input');
 const inputs = document.querySelectorAll('.form-container .input-container input');
 const submitButton = document.getElementById('submit-button');
+
+// Form - Regex
 const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const phoneRegex = /^\(\d{2}\)\s\d{4,5}-\d{4}$/;
 
+// Form - Functions
 const validateEmail = (email) => {
   const isValid = emailRegex.test(email);
   return isValid;
@@ -224,6 +227,7 @@ const validateForm = () => {
   return isFormValid;
 };
 
+// Form - Listeners
 submitButton.addEventListener('click', (e) => {
   removeAllInvalidMessages();
   e.preventDefault();
