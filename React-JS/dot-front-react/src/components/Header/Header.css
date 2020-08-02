@@ -1,0 +1,114 @@
+.background-image-container {
+  align-items: center;
+  background-image: url('../images/lf_background_trees.jpg');
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-flow: column;
+  height: 40vh;
+  justify-content: space-between;
+  text-align: center;
+  transition: opacity 250ms;
+}
+
+.mobile-header {
+  align-items: center;
+  background-color: rgb(69, 69, 69);
+  color: white;
+  display: flex;
+  flex-flow: column;
+  height: 100px;
+  justify-content: center;
+  padding: 2%;
+  text-align: center;
+}
+
+.mobile-header-text {
+  padding: 2%;
+  width: 60vw;
+}
+
+.desktop-header {
+  display: none;
+}
+
+.background-image-arrow {
+  height: 50px;
+  margin-top: 20px;
+  transition: all 200ms;
+}
+
+.background-image-arrow:hover {
+  opacity: 0.8;
+  transform: scale(1.2);
+}
+
+.background-image-arrow:active {
+  opacity: 0.6;
+  transform: scale(0.8);
+}
+
+.select-background-image {
+  background-color: rgba(69, 69, 69, 0.671);
+  display: flex;
+  justify-content: center;
+  padding: 1%;
+  width: 100%;
+}
+
+.select-background-image .radio-button + .radio-button {
+  margin-left: 20px;
+}
+
+.radio-button input[type='radio'] {
+  display: none;
+}
+
+.radio-button span {
+  background-color: white;
+  border-radius: 50%;
+  border: 5px solid rgb(44, 44, 44);
+  cursor: pointer;
+  display: block;
+  height: 40px;
+  transition: all 200ms;
+  width: 40px;
+}
+
+.radio-button span:hover {
+  background-color: rgb(196, 255, 189);
+  border-color: rgb(18, 48, 15);
+  transform: scale(1.2);
+}
+
+.radio-button input:checked + span {
+  background-color: rgb(56, 63, 37);
+  border: 5px solid white;
+  cursor: auto;
+  transform: scale(1);
+}
+
+@media only screen and (min-width: 800px) {
+  .background-image-container {
+    flex-flow: column;
+    height: 100vh;
+  }
+
+  .mobile-header {
+    display: none;
+  }
+
+  .mobile-header-arrow {
+    display: none;
+  }
+
+  .desktop-header {
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(56, 63, 37);
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: 2%;
+    padding: 2%;
+    width: 90vw;
+  }
+}
