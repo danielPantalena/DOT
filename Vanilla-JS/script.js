@@ -147,65 +147,13 @@ accordionContainer.addEventListener('click', (event) => {
 
 // Mask
 
-const telephoneInput = document.getElementById('telephone-input');
-
-const initialInputValue = '(**) * ****-****';
-
-let maskArray = initialInputValue.split('');
-let telephoneNumbersArray = [];
-
-telephoneInput.value = initialInputValue;
-
-telephoneInput.addEventListener('keydown', (e) => {
-  const momentMask = event.target.value;
-  console.log(maskArray.join(''));
+document.getElementById('phone-input').addEventListener('input', (event) => {
+  let phoneNumber = event.target.value;
+  phoneNumber = phoneNumber.replace(/\D/g, '');
+  phoneNumber = phoneNumber.replace(/(\d{2})(\d{1,4})/, `($1) $2`);
+  console.log(phoneNumber.length);
+  if (phoneNumber.length >= 10) {
+    phoneNumber = phoneNumber.replace(/(\d{4})(\d{1,4})$/, `$1-$2`);
+  }
+  event.target.value = phoneNumber;
 });
-
-// function doFormat(x, pattern, mask) {
-//   var strippedValue = x.replace(/[^0-9]/g, '');
-//   var chars = strippedValue.split('');
-//   var count = 0;
-
-//   var formatted = '';
-//   for (var i = 0; i < pattern.length; i++) {
-//     const c = pattern[i];
-//     if (chars[count]) {
-//       if (/\*/.test(c)) {
-//         formatted += chars[count];
-//         count++;
-//       } else {
-//         formatted += c;
-//       }
-//     } else if (mask) {
-//       if (mask.split('')[i]) formatted += mask.split('')[i];
-//     }
-//   }
-//   return formatted;
-// }
-
-// document.querySelectorAll('[data-mask]').forEach((elementWithMask) => {
-//   const format = (elem) => {
-//     const val = doFormat(elem.value, elem.getAttribute('data-format'));
-//     elem.value = doFormat(
-//       elem.value,
-//       elem.getAttribute('data-format'),
-//       elem.getAttribute('data-mask'),
-//     );
-
-//     if (elem.createTextRange) {
-//       var range = elem.createTextRange();
-//       range.move('character', val.length);
-//       range.select();
-//     } else if (elem.selectionStart) {
-//       elem.focus();
-//       elem.setSelectionRange(val.length, val.length);
-//     }
-//   };
-//   elementWithMask.addEventListener('keyup', function () {
-//     format(elementWithMask);
-//   });
-//   elementWithMask.addEventListener('keydown', function () {
-//     format(elementWithMask);
-//   });
-//   format(elementWithMask);
-// });
