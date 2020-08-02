@@ -1,0 +1,38 @@
+.select-background-image {
+  background-color: rgba(69, 69, 69, 0.671);
+  display: flex;
+  justify-content: center;
+  padding: 1%;
+  width: 100%;
+}
+
+.select-background-button {
+  margin-left: 20px;
+  background-color: white;
+  border-radius: 50%;
+  border: 5px solid rgb(44, 44, 44);
+  cursor: pointer;
+  display: block;
+  height: 40px;
+  transition: all 200ms;
+  width: 40px;
+  outline: none;
+}
+
+.select-background-button:hover {
+  background-color: rgb(196, 255, 189);
+  border-color: rgb(18, 48, 15);
+  transform: scale(1.2);
+}
+
+.selected {
+  background-color: rgb(56, 63, 37);
+  border: 5px solid white;
+}
+
+.selected:hover {
+  background-color: rgb(56, 63, 37);
+  border: 5px solid white;
+  cursor: auto;
+  transform: scale(1);
+}

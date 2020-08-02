@@ -1,0 +1,24 @@
+.carousel-container {
+  position: relative;
+  height: fit-content;
+  overflow: hidden;
+}
+
+.header-desktop-container {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0);
+  color: rgb(56, 63, 37);
+  display: block;
+  font-size: 1.2em;
+  margin-bottom: 2%;
+  padding: 1%;
+  position: absolute;
+  top: 0px;
+  width: 100vw;
+}
+
+.select-background-container {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}

@@ -1,0 +1,42 @@
+.desktop-header-container {
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-flow: column;
+  height: 40vh;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.desktop-header {
+  display: none;
+}
+
+.background-image-arrow {
+  height: 50px;
+  margin-top: 20px;
+  transition: all 200ms;
+}
+
+.background-image-arrow:hover {
+  opacity: 0.8;
+  transform: scale(1.2);
+}
+
+.background-image-arrow:active {
+  opacity: 0.6;
+  transform: scale(0.8);
+}
+
+@media only screen and (min-width: 800px) {
+  .desktop-header {
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(56, 63, 37);
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: 2%;
+    padding: 2%;
+    width: 90vw;
+  }
+}
