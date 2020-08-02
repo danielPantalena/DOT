@@ -150,8 +150,7 @@ accordionContainer.addEventListener('click', (event) => {
 document.getElementById('phone-input').addEventListener('input', (event) => {
   let phoneNumber = event.target.value;
   phoneNumber = phoneNumber.replace(/\D/g, '');
-  phoneNumber = phoneNumber.replace(/(\d{2})(\d{1,4})/, `($1) $2`);
-  console.log(phoneNumber.length);
+  phoneNumber = phoneNumber.replace(/^(\d{2})(\d{1,4})/, `($1) $2`);
   if (phoneNumber.length >= 10) {
     phoneNumber = phoneNumber.replace(/(\d{4})(\d{1,4})$/, `$1-$2`);
   }

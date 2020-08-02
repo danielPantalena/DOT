@@ -250,13 +250,23 @@
 
   <section class="form-container">
     <form>
-      <input id="phone-input" type="text">
+
+      <div class="input-container">
+        <label for="name">Nome: </label>
+        <input name="name" type="text">
+      </div>
       <div class="responsive-inputs">
-        <input class="responsive-input" type="text" name="Nome">
-        <input class="responsive-input" type="text" name="Email">
+        <div class="input-container">
+          <input name="email" class="responsive-input" type="text">
+        </div>
+        <div class="input-container">
+          <input id="phone-input" name="phone" class="responsive-input" type="text">
+        </div>
       </div>
       <textarea name="Mensagem" id="" cols="30" rows="10"></textarea>
-      <input class="submit-button" type="button" value="ENVIAR">
+      <div class="input-container">
+        <input class="submit-button" type="button" value="ENVIAR">
+      </div>
     </form>
   </section>
 
