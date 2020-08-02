@@ -192,15 +192,15 @@ const addInvalidMessage = (element) => {
   const invalidMessageElement = document.createElement('span');
   invalidMessageElement.innerHTML = `${element.name} inválido(a)`;
   elementParent.appendChild(invalidMessageElement);
-  elementParent.style.border = '1px solid red'
-  elementParent.style.color = 'red'
+  elementParent.style.border = '1px solid red';
+  elementParent.style.color = 'red';
 };
 
 const removeInvalidMessage = (element) => {
   const elementParent = element.parentNode;
   if (elementParent.lastChild.tagName !== 'SPAN') return null;
-  elementParent.style.border = 'none'
-  elementParent.style.color = 'black'
+  elementParent.style.border = 'none';
+  elementParent.style.color = 'black';
   return elementParent.removeChild(elementParent.lastChild);
 };
 
