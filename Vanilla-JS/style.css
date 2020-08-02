@@ -18,7 +18,7 @@
   height: 40vh;
   justify-content: space-between;
   text-align: center;
-  transition: opacity 100ms;
+  transition: opacity 250ms;
 }
 
 .mobile-header {
@@ -304,12 +304,12 @@
 .toggle-selected + .accordion-content {
   background-color: white;
   color: rgb(112, 112, 112);
-  height: fit-content;
+  height: 50vh;
   opacity: 1;
   padding: 1%;
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 500px) {
   .accordion-content {
     flex-flow: row;
   }
@@ -328,6 +328,7 @@
 .form-container form {
   align-items: center;
   background-image: linear-gradient(to bottom right, rgb(112, 112, 112) 50%, rgb(69, 69, 69) 50%);
+  font-size: 1.1em;
   justify-content: center;
   padding: 2% 4%;
 }
@@ -348,22 +349,23 @@
   font-weight: 900;
   height: 40px;
   margin: 1% 0;
-  padding-left: 10px;
+  padding: 4%;
   width: 100%;
 }
 
 .message-container label {
   align-items: flex-start;
   height: fit-content;
+  padding: 10px 4%;
 }
 
 .input-container input {
-  width: 80%;
-  border: 0;
   background-color: rgba(240, 248, 255, 0);
-  text-decoration: none;
-  margin-left: 1vw;
+  border: 0;
   font-size: 1.1em;
+  margin-left: 1vw;
+  text-decoration: none;
+  width: 50%;
 }
 
 .input-container input:focus {
@@ -374,25 +376,51 @@
   background-color: rgb(180, 180, 180);
   border-radius: 7px;
   border: none;
-  margin: 1% 0;
+  font-size: 1em;
+  margin-left: 1vw;
   width: 100%;
+}
+
+.submit-button-container {
+  align-items: center;
+  display: flex;
+  height: 10vh;
+  justify-content: center;
+  margin: 2%;
 }
 
 input.submit-button {
   background-color: white;
+  border-radius: 10px;
+  border: none;
   color: rgb(49, 49, 49);
   cursor: pointer;
+  font-size: 1.1em;
   font-weight: 800;
-  width: 100px;
+  height: 80%;
+  width: 40vw;
+}
+
+.input-container span {
+  color: red;
+  font-size: 0.7em;
 }
 
 @media only screen and (min-width: 800px) {
+  .input-container label {
+    padding: 30px 20px;
+  }
+
   .responsive-inputs {
     display: flex;
   }
 
   .responsive-input + .responsive-input {
-    margin-left: 20px;
+    margin-left: 15px;
+  }
+
+  input.submit-button {
+    width: 18vw;
   }
 }
 
@@ -403,9 +431,16 @@ footer {
   background-color: rgb(44, 44, 44);
   color: white;
   display: flex;
+  font-size: 1.5em;
   font-weight: 900;
   height: 80px;
   justify-content: center;
-  padding: 2%;
+  padding: 12% 2%;
   text-align: center;
+}
+
+@media only screen and (min-width: 800px) {
+  footer {
+    padding: 2%;
+  }
 }

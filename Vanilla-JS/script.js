@@ -21,8 +21,8 @@ selectBackgroundImage.addEventListener('click', (e) => {
         return null;
     }
   };
-  setTimeout(updateBackgroundImage, 100);
-  return setTimeout(() => (backgroundImage.style.opacity = '1'), 100);
+  setTimeout(updateBackgroundImage, 250);
+  return setTimeout(() => (backgroundImage.style.opacity = '1'), 250);
 });
 
 // Carousel
@@ -167,12 +167,76 @@ document.getElementById('phone-input').addEventListener('input', (event) => {
 });
 
 // Form - Validation
-
+const form = document.querySelector('.form-container form');
+const nameInput = document.getElementById('name-input');
+const emailInput = document.getElementById('email-input');
+const phoneInput = document.getElementById('phone-input');
+const messageTextArea = document.getElementById('message-input');
+const inputs = document.querySelectorAll('.form-container .input-container input');
+const submitButton = document.getElementById('submit-button');
 const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+const phoneRegex = /^\(\d{2}\)\s\d{4,5}-\d{4}$/;
 
 const validateEmail = (email) => {
   const isValid = emailRegex.test(email);
-  console.log(isValid);
+  return isValid;
 };
 
+const validatePhoneNumber = (phoneNumber) => {
+  const isValid = phoneRegex.test(phoneNumber);
+  return isValid;
+};
 
+const addInvalidMessage = (element) => {
+  const elementParent = element.parentNode;
+  const invalidMessageElement = document.createElement('span');
+  invalidMessageElement.innerHTML = `${element.name} inválido(a)`;
+  elementParent.appendChild(invalidMessageElement);
+  elementParent.style.border = '1px solid red'
+  elementParent.style.color = 'red'
+};
+
+const removeInvalidMessage = (element) => {
+  const elementParent = element.parentNode;
+  if (elementParent.lastChild.tagName !== 'SPAN') return null;
+  elementParent.style.border = 'none'
+  elementParent.style.color = 'black'
+  return elementParent.removeChild(elementParent.lastChild);
+};
+
+const removeAllInvalidMessages = () => {
+  for (const input of inputs) {
+    removeInvalidMessage(input);
+  }
+  removeInvalidMessage(messageTextArea);
+};
+
+const validateForm = () => {
+  const isEmailValid = validateEmail(emailInput.value);
+  if (!isEmailValid) addInvalidMessage(emailInput);
+  const isPhoneValid = validatePhoneNumber(phoneInput.value);
+  if (!isPhoneValid) addInvalidMessage(phoneInput);
+  const isNameValid = nameInput.value !== '';
+  if (!isNameValid) addInvalidMessage(nameInput);
+  const isMessageValid = messageTextArea.value !== '';
+  if (!isMessageValid) addInvalidMessage(messageTextArea);
+  const isFormValid = isEmailValid && isPhoneValid && isNameValid && isMessageValid;
+  return isFormValid;
+};
+
+submitButton.addEventListener('click', (e) => {
+  removeAllInvalidMessages();
+  e.preventDefault();
+  if (validateForm()) {
+    form.submit();
+    return alert('Formulário enviado :)');
+  } else {
+    return alert('Formulário incompleto');
+  }
+});
+
+for (const input of inputs) {
+  input.addEventListener('input', (e) => removeInvalidMessage(e.target));
+}
+
+messageTextArea.addEventListener('input', (e) => removeInvalidMessage(e.target));
