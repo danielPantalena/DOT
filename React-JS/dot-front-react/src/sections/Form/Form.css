@@ -1,0 +1,102 @@
+.form-container form {
+  align-items: center;
+  background-image: linear-gradient(to bottom right, rgb(112, 112, 112) 50%, rgb(69, 69, 69) 50%);
+  font-size: 1.1em;
+  justify-content: center;
+  padding: 2% 4%;
+}
+
+.input-container {
+  width: 100%;
+}
+
+.input-container label {
+  align-items: center;
+  background-color: rgb(180, 180, 180);
+  border-radius: 7px;
+  border: none;
+  color: rgb(49, 49, 49);
+  cursor: text;
+  display: flex;
+  font-size: 0.9em;
+  font-weight: 900;
+  height: 40px;
+  margin: 1% 0;
+  padding: 4%;
+  width: 100%;
+}
+
+.message-container label {
+  align-items: flex-start;
+  height: fit-content;
+  padding: 10px 4%;
+}
+
+.input-container input {
+  background-color: rgba(240, 248, 255, 0);
+  border: 0;
+  font-size: 1.1em;
+  margin-left: 1vw;
+  text-decoration: none;
+  width: 50%;
+}
+
+.input-container input:focus {
+  outline: none;
+}
+
+.form-container textarea {
+  background-color: rgb(180, 180, 180);
+  border-radius: 7px;
+  border: none;
+  font-size: 1em;
+  margin-left: 1vw;
+  width: 100%;
+}
+
+.form-container textarea:focus {
+  outline: none;
+}
+
+.submit-button-container {
+  align-items: center;
+  display: flex;
+  height: 10vh;
+  justify-content: center;
+  margin: 2%;
+}
+
+input.submit-button {
+  background-color: white;
+  border-radius: 10px;
+  border: none;
+  color: rgb(49, 49, 49);
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: 800;
+  height: 80%;
+  width: 40vw;
+}
+
+.input-container span {
+  color: red;
+  font-size: 0.7em;
+}
+
+@media only screen and (min-width: 800px) {
+  .input-container label {
+    padding: 30px 20px;
+  }
+
+  .responsive-inputs {
+    display: flex;
+  }
+
+  .responsive-input + .responsive-input {
+    margin-left: 15px;
+  }
+
+  input.submit-button {
+    width: 18vw;
+  }
+}

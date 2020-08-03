@@ -1,5 +1,12 @@
 import React from 'react';
-import { BackgroundCarousel, ImagesCarousel, CircleImage, Accordion } from './sections';
+import {
+  BackgroundCarousel,
+  ImagesCarousel,
+  CircleImage,
+  Accordion,
+  Form,
+  Footer,
+} from './sections';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -10,6 +17,8 @@ function App() {
       {/* <ImagesCarousel /> */}
       <CircleImage />
       <Accordion />
+      <Form />
+      <Footer />
     </div>
   );
 }
