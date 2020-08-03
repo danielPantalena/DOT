@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import { SelectBackgroundImage, HeaderDesktop, HeaderMobile } from '../../components';
+import { backgroundImages } from '../../data';
 import { backgroundTrees, seoulTower, blueCartoon, arrowGrey } from '../../images';
 import { useMediaQuery } from 'react-responsive';
 import './BackgroundCarousel.css';
 
 const CarouselComponent = () => {
   const isMobile = useMediaQuery({ query: '(max-device-width: 800px)' });
-  console.log(isMobile);
+  const isDesktop = !isMobile;
 
   const [index, setIndex] = useState(0);
 
@@ -21,7 +22,6 @@ const CarouselComponent = () => {
           <HeaderMobile />
         </div>
       )}
-    
       <Carousel
         activeIndex={index}
         onSelect={handleSelect}
@@ -29,28 +29,24 @@ const CarouselComponent = () => {
         interval={null}
         indicators={false}
       >
-        <Carousel.Item>
-          <img className="background-image d-block w-100" src={backgroundTrees} alt="First slide" />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img className="background-image d-block w-100" src={seoulTower} alt="Second slide" />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img className="background-image d-block w-100" src={blueCartoon} alt="Third slide" />
-        </Carousel.Item>
+        {backgroundImages.map((image) => (
+          <Carousel.Item>
+            <img className="background-image d-block w-100" src={image} alt="First slide" />
+          </Carousel.Item>
+        ))}
       </Carousel>
       {isMobile && (
-        <a href="#carousel" className="mobile-header-arrow">
-          <img className="background-image-arrow" src={arrowGrey} alt="arrow" />
-        </a>
+        <div className="mobile-header-arrow-container">
+          <img className="background-image-arrow mobile-header-arrow" src={arrowGrey} alt="arrow" />
+        </div>
       )}
-      {!isMobile && (
+      {isDesktop && (
         <div className="header-desktop-container">
           <HeaderDesktop />
         </div>
       )}
       <div className="select-background-container">
-        <SelectBackgroundImage setIndex={setIndex} />
+        <SelectBackgroundImage setIndex={setIndex} numberOfImages={backgroundImages.length} />
       </div>
     </div>
   );

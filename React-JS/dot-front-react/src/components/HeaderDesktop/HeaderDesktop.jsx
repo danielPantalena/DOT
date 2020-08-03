@@ -10,9 +10,7 @@ const HeaderDesktop = () => {
           <h1>LOREM IPSUM</h1>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
         </header>
-        <a href="#carousel">
-          <img className="background-image-arrow" src={arrowGrey} alt="arrow" />
-        </a>
+        <img className="background-image-arrow" src={arrowGrey} alt="arrow" />
       </div>
     </div>
   );

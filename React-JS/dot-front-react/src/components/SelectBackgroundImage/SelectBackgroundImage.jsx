@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './SelectBackgroundImage.css';
 
-const SelectBackgroundImage = ({ setIndex }) => {
+const SelectBackgroundImage = ({ setIndex, numberOfImages }) => {
   const [selectedButton, setSelectedButton] = useState('0');
 
   const selectButton = (event) => {
@@ -11,15 +11,23 @@ const SelectBackgroundImage = ({ setIndex }) => {
   };
 
   const returnButtonClass = (buttonNumber) =>
-    selectedButton === buttonNumber
+    Number(selectedButton) === buttonNumber
       ? 'selected select-background-button'
       : 'select-background-button';
 
+  const renderButtons = (numberOfButtons) => {
+    let buttonsToRender = [];
+    for (let i = 0; i < numberOfButtons; i++) {
+      buttonsToRender.push(
+      <button className={returnButtonClass(i)} value={i} onClick={selectButton} />
+      )
+    }
+    return buttonsToRender;
+  }
+
   return (
     <div className="select-background-image">
-      <button className={returnButtonClass('0')} value={'0'} onClick={selectButton} />
-      <button className={returnButtonClass('1')} value={'1'} onClick={selectButton} />
-      <button className={returnButtonClass('2')} value={'2'} onClick={selectButton} />
+      {renderButtons(numberOfImages)}
     </div>
   );
 };

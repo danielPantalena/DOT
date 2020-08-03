@@ -4,9 +4,12 @@
   overflow: hidden;
 }
 
-.mobile-header-arrow {
+.mobile-header-arrow-container {
   position: absolute;
   top: 15vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .header-mobile-container {
@@ -31,4 +34,3 @@
   bottom: 0px;
   width: 100%;
 }
-
