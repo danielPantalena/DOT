@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import {
   BackgroundCarousel,
   ImagesCarousel,
@@ -12,14 +13,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <div className="App">
-      <BackgroundCarousel />
-      {/* <ImagesCarousel /> */}
-      <CircleImage />
-      <Accordion />
-      <Form />
-      <Footer />
-    </div>
+    <Router>
+      <div className="App">
+        <BackgroundCarousel />
+        {/* <ImagesCarousel /> */}
+        <CircleImage />
+        <Accordion />
+        <Form />
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
