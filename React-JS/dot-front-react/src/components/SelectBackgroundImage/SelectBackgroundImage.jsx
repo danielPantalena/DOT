@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { backgroundTrees, seoulTower, blueCartoon } from '../../images';
+import React, { useState } from 'react';
 import './SelectBackgroundImage.css';
 
 const SelectBackgroundImage = ({ setIndex }) => {
