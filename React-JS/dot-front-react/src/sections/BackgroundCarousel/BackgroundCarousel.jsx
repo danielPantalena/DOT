@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import { SelectBackgroundImage, HeaderDesktop, HeaderMobile } from '../';
+import { SelectBackgroundImage, HeaderDesktop, HeaderMobile } from '../../components';
 import { backgroundTrees, seoulTower, blueCartoon } from '../../images';
 import './BackgroundCarousel.css';
 
@@ -12,18 +12,18 @@ const CarouselComponent = () => {
   };
   return (
     <div className="carousel-container">
-      <HeaderMobile />
+      <div className="header-mobile-container">
+        <HeaderMobile />
+      </div>
       <Carousel
         activeIndex={index}
         onSelect={handleSelect}
         controls={false}
-        indicators={true}
         interval={null}
         indicators={false}
       >
         <Carousel.Item>
           <img
-            fluid
             className="background-image d-block w-100"
             src={backgroundTrees}
             alt="First slide"
@@ -31,7 +31,6 @@ const CarouselComponent = () => {
         </Carousel.Item>
         <Carousel.Item>
           <img
-            fluid
             className="background-image d-block w-100"
             src={seoulTower}
             alt="Second slide"
@@ -39,7 +38,6 @@ const CarouselComponent = () => {
         </Carousel.Item>
         <Carousel.Item>
           <img
-            fluid
             className="background-image d-block w-100"
             src={blueCartoon}
             alt="Third slide"

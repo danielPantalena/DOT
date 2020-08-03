@@ -1,0 +1,14 @@
+.image-container {
+  margin-bottom: -50px;
+  padding: 5%;
+}
+
+.carousel-image {
+  border: 10px solid rgb(105, 105, 105);
+}
+
+.carousel-text {
+  color: white;
+  margin-bottom: 50px;
+  padding: 2% 5%;
+}

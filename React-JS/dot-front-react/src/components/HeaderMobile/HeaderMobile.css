@@ -10,6 +10,22 @@
   text-align: center;
 }
 
+.background-image-arrow {
+  height: 50px;
+  margin-top: 20px;
+  transition: all 200ms;
+}
+
+.background-image-arrow:hover {
+  opacity: 0.8;
+  transform: scale(1.2);
+}
+
+.background-image-arrow:active {
+  opacity: 0.6;
+  transform: scale(0.8);
+}
+
 .mobile-header-text {
   padding: 2%;
   width: 60vw;
