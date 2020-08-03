@@ -10,9 +10,7 @@ const HeaderMobile = () => {
         <h1>LOREM IPSUM</h1>
         <p className="mobile-header-text">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
       </header>
-      <a href="#carousel" className="mobile-header-arrow">
-        <img className="background-image-arrow" src={arrowGrey} alt="arrow" />
-      </a>
+
     </div>
   );
 };

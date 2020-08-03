@@ -31,7 +31,7 @@
   width: 60vw;
 }
 
-@media only screen and (min-width: 800px) {
+/* @media only screen and (min-width: 800px) {
   .mobile-header {
     display: none;
   }
@@ -39,4 +39,4 @@
   .mobile-header-arrow {
     display: none;
   }
-}
+} */

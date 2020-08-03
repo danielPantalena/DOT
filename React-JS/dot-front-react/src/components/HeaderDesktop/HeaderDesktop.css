@@ -10,7 +10,13 @@
 }
 
 .desktop-header {
-  display: none;
+  background-color: rgba(0, 0, 0, 0);
+  color: rgb(56, 63, 37);
+  display: block;
+  font-size: 1.2em;
+  margin-bottom: 2%;
+  padding: 2%;
+  width: 90vw;
 }
 
 .background-image-arrow {
@@ -29,14 +35,3 @@
   transform: scale(0.8);
 }
 
-@media only screen and (min-width: 800px) {
-  .desktop-header {
-    background-color: rgba(0, 0, 0, 0);
-    color: rgb(56, 63, 37);
-    display: block;
-    font-size: 1.2em;
-    margin-bottom: 2%;
-    padding: 2%;
-    width: 90vw;
-  }
-}

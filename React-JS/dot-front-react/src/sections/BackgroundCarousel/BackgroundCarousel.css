@@ -4,6 +4,15 @@
   overflow: hidden;
 }
 
+.mobile-header-arrow {
+  position: absolute;
+  top: 15vh;
+}
+
+.header-mobile-container {
+  height: 15vh;
+}
+
 .header-desktop-container {
   display: flex;
   background-color: rgba(0, 0, 0, 0);

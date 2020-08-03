@@ -7,7 +7,6 @@ const SelectBackgroundImage = ({ setIndex }) => {
 
   const selectButton = (event) => {
     const sliderPosition = event.target.value;
-    console.log(typeof sliderPosition);
     setSelectedButton(sliderPosition);
     setIndex(Number(sliderPosition));
   };
