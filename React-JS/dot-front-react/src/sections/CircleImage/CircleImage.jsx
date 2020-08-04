@@ -1,11 +1,8 @@
 import React from 'react';
-import { useMediaQuery } from 'react-responsive';
 import { backgroundTrees } from '../../images';
 import './CircleImage.css';
 
 const CircleImage = () => {
-  const isMobile = useMediaQuery({ query: '(max-device-width: 800px)' });
-  const isDesktop = !isMobile;
 
   return (
     <section className="circle-image-container">

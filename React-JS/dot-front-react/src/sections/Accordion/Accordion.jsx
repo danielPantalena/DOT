@@ -1,16 +1,34 @@
-import React from 'react';
-import Accordion from 'react-bootstrap/Accordion';
-import { AccordionCard } from '../../components';
+import React, { useState } from 'react';
+import { AccordionToggle } from '../../components';
 import { accordionData } from '../../data';
 
 import './Accordion.css';
 
 const AccordionComponent = () => {
+  const [selectedAccordion, setSelectedAccordion] = useState(null);
+
+  const getClassName = (index) =>
+    index === selectedAccordion ? 'toggle-selected accordion-toggle' : 'accordion-toggle';
+
+  const selectAccordion = (index) => {
+    console.log('inside function index:', index)
+    console.log('selectedAccordion', selectedAccordion)
+    if (index === selectedAccordion) return setSelectedAccordion('oi');
+    setSelectedAccordion(index);
+  };
+
   return (
-    <section id="accordion-section" class="accordion-container">
-      <div class="accordion-border">
+    <section id="accordion-section" className="accordion-container">
+      <div className="accordion-border">
         {accordionData.map(({ image, title, text }, index) => (
-          <AccordionCard image={image} title={title} text={text} eventKey={String(index)} />
+          <AccordionToggle
+            index={index}
+            image={image}
+            title={title}
+            text={text}
+            selectAccordion={selectAccordion}
+            accordionToggleClass={getClassName(index)}
+          />
         ))}
       </div>
     </section>

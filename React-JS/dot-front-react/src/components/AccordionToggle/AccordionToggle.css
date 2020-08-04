@@ -1,0 +1,89 @@
+.accordion-toggle {
+  align-items: center;
+  background-color: rgb(112, 112, 112);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1px;
+  padding: 20px 30px;
+  text-decoration: none;
+  transition: all 500ms;
+}
+
+a.accordion-toggle:hover {
+  transform: scale(0.99);
+  background-color: rgb(134, 134, 134);
+  color: rgb(230, 230, 230);
+  text-decoration: none;
+}
+
+.accordion-arrow {
+  color: white;
+  padding: -200px;
+  transition: all 500ms;
+}
+
+.accordion-content {
+  align-items: center;
+  background-color: rgb(112, 112, 112);
+  color: white;
+  display: flex;
+  flex-flow: column;
+  height: 0vh;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 500ms;
+}
+
+.accordion-image {
+  border: 12px solid rgb(112, 112, 112);
+  margin: 0% 1%;
+  width: 75vw;
+}
+
+.accordion-text {
+  margin: 2%;
+  padding: 4%;
+  text-align: center;
+  width: 85vw;
+}
+
+.toggle-selected.accordion-toggle {
+  background-color: white;
+  color: rgb(112, 112, 112);
+  margin-bottom: -10px;
+}
+
+.toggle-selected.accordion-toggle:hover {
+  transform: scale(1.02);
+  background-color: rgb(235, 235, 235);
+  color: rgb(73, 73, 73);
+  text-decoration: none;
+}
+
+.toggle-selected .accordion-arrow {
+  color: rgb(112, 112, 112);
+  transform: rotate(180deg);
+}
+
+.toggle-selected + .accordion-content {
+  background-color: white;
+  color: rgb(112, 112, 112);
+  height: 50vh;
+  opacity: 1;
+  padding: 1%;
+}
+
+@media only screen and (min-width: 500px) {
+  .accordion-content {
+    flex-flow: row;
+  }
+
+  .toggle-selected + .accordion-content {
+    height: 25vw;
+  }
+
+  .accordion-image {
+    width: 35vw;
+  }
+}

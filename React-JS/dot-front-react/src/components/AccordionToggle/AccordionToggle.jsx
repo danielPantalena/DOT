@@ -1,16 +1,18 @@
 import React from 'react';
-import { HashLink as Link } from 'react-router-hash-link';
-import Accordion from 'react-bootstrap/Accordion';
-import Card from 'react-bootstrap/Card';
 import { ArrowDown } from 'react-bootstrap-icons';
-import 'AccordionCard.css';
+import './AccordionToggle.css';
 
-const AccordionCard = ({ image, title, text, eventKey }) => {
+const AccordionCard = ({ image, title, text, accordionToggleClass, selectAccordion, index }) => {
+  
   return (
     <>
-      <a id="toggle" href="#accordion-section" className="accordion-toggle">
+      <a
+        href="#accordion-section"
+        className={accordionToggleClass}
+        onClick={() => selectAccordion(index)}
+      >
         <h3 class="accordion-title">{title}</h3>
-        <ArrowDown size={40} />
+        <ArrowDown size={40} className="accordion-arrow" />
       </a>
       <div class="accordion-content">
         <img class="accordion-image" src={image} alt="accordion" />

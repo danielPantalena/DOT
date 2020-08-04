@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import { SelectBackgroundImage, HeaderDesktop, HeaderMobile } from '../../components';
 import { backgroundImages } from '../../data';
-import { backgroundTrees, seoulTower, blueCartoon, arrowGrey } from '../../images';
+import { arrowGrey } from '../../images';
 import { useMediaQuery } from 'react-responsive';
 import './BackgroundCarousel.css';
 
