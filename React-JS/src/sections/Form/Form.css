@@ -6,8 +6,28 @@
   padding: 2% 4%;
 }
 
+.form-container .form-row .form-group input {
+  width: 60%;
+}
+
 .input-container {
   width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.input-container .form-label div {
+  justify-self: flex-end;
+  width: 20%;
+}
+
+.text-area label.form-label {
+  height: 200px;
+  align-items: flex-start;
+}
+
+.text-area textarea {
+  margin-top: -6px;
 }
 
 .input-container label {

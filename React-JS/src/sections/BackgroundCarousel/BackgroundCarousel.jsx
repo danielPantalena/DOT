@@ -36,9 +36,9 @@ const CarouselComponent = () => {
         ))}
       </Carousel>
       {isMobile && (
-        <div className="mobile-header-arrow-container">
+        <a href="#carousel-container" className="mobile-header-arrow-container">
           <img className="background-image-arrow mobile-header-arrow" src={arrowGrey} alt="arrow" />
-        </div>
+        </a>
       )}
       {isDesktop && (
         <div className="header-desktop-container">

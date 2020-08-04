@@ -11,8 +11,6 @@ const AccordionComponent = () => {
     index === selectedAccordion ? 'toggle-selected accordion-toggle' : 'accordion-toggle';
 
   const selectAccordion = (index) => {
-    console.log('inside function index:', index)
-    console.log('selectedAccordion', selectedAccordion)
     if (index === selectedAccordion) return setSelectedAccordion('oi');
     setSelectedAccordion(index);
   };

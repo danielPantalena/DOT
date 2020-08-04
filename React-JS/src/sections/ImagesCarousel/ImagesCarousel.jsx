@@ -5,32 +5,23 @@ import { backgroundTrees, blueCartoon, seoulTower, cartoonImage, carImage } from
 
 const ImagesCarousel = () => {
   return (
-    <Carousel>
-      <Carousel.Item>
+    <div id="carousel-container">
         <ImagesCarouselItem image={backgroundTrees} />
-      </Carousel.Item>
-      <Carousel.Item>
+
         <ImagesCarouselItem image={blueCartoon} />
-      </Carousel.Item>
-      <Carousel.Item>
+
         <ImagesCarouselItem image={seoulTower} />
-      </Carousel.Item>
-      <Carousel.Item>
+
         <ImagesCarouselItem image={backgroundTrees} />
-      </Carousel.Item>
-      <Carousel.Item>
+
         <ImagesCarouselItem image={cartoonImage} />
-      </Carousel.Item>
-      <Carousel.Item>
+
         <ImagesCarouselItem image={backgroundTrees} />
-      </Carousel.Item>
-      <Carousel.Item>
+
         <ImagesCarouselItem image={carImage} />
-      </Carousel.Item>
-      <Carousel.Item>
+
         <ImagesCarouselItem image={seoulTower} />
-      </Carousel.Item>
-    </Carousel>
+    </div>
   );
 };
 
