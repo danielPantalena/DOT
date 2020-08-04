@@ -10,12 +10,22 @@ const FormComponent = () => {
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
+    console.log(form);
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
     }
-
     setValidated(true);
+  };
+
+  const maskPhone = (event) => {
+    let phoneNumber = event.target.value;
+    phoneNumber = phoneNumber.replace(/\D/g, '');
+    phoneNumber = phoneNumber.replace(/^(\d{2})(\d{1,4})/, `($1) $2`);
+    if (phoneNumber.length >= 10) {
+      phoneNumber = phoneNumber.replace(/(\d{4})(\d{1,4})$/, `$1-$2`);
+    }
+    event.target.value = phoneNumber;
   };
 
   return (
@@ -48,7 +58,13 @@ const FormComponent = () => {
             <div className="input-container">
               <Form.Label>
                 *Telefone:
-                <Form.Control required type="number" placeholder="(__) ____-____" />
+                <Form.Control
+                  required
+                  type="text"
+                  maxLength="15"
+                  placeholder="(__) ____-____"
+                  onChange={maskPhone}
+                />
                 <Form.Control.Feedback>Validado</Form.Control.Feedback>
                 <Form.Control.Feedback type="invalid">Telefone inválido</Form.Control.Feedback>
               </Form.Label>
@@ -77,62 +93,6 @@ const FormComponent = () => {
         </div>
       </Form>
     </section>
-    // <section class="form-container">
-    //   <form>
-    //     <div class="input-container">
-    //       <label for="name-input">
-    //         *Nome:
-    //         <input
-    //           id="name-input"
-    //           name="Nome"
-    //           type="text"
-    //           placeholder="Informe seu nome"
-    //           required
-    //         />
-    //       </label>
-    //     </div>
-    //     <div class="responsive-inputs">
-    //       <div class="input-container responsive-input">
-    //         <label for="email-input">
-    //           *E-mail:
-    //           <input
-    //             id="email-input"
-    //             name="E-mail"
-    //             type="text"
-    //             placeholder="Informe seu email"
-    //             required
-    //           />
-    //         </label>
-    //       </div>
-    //       <div class="input-container responsive-input">
-    //         <label for="phone-input">
-    //           *Telefone:
-    //           <input
-    //             id="phone-input"
-    //             name="Telefone"
-    //             type="text"
-    //             placeholder="(__) ____-____"
-    //             maxlength="15"
-    //             required
-    //           />
-    //         </label>
-    //       </div>
-    //     </div>
-    //     <div class="input-container message-container">
-    //       <label for="message-input">
-    //         *Menssagem:
-    //         <textarea
-    //           name="Mensagem"
-    //           id="message-input"
-    //           cols="30"
-    //           rows="10"
-    //           placeholder="Escreva aqui"
-    //           required
-    //         ></textarea>
-    //       </label>
-    //     </div>
-    //   </form>
-    // </section>
   );
 };
 

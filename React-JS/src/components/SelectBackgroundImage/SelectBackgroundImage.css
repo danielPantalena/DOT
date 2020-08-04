@@ -7,7 +7,6 @@
 }
 
 .select-background-button {
-  margin-left: 20px;
   background-color: white;
   border-radius: 50%;
   border: 5px solid rgb(44, 44, 44);
@@ -16,6 +15,10 @@
   height: 40px;
   transition: all 200ms;
   width: 40px;
+}
+
+.select-background-button + .select-background-button {
+  margin-left: 20px;
 }
 
 .select-background-button:focus {
