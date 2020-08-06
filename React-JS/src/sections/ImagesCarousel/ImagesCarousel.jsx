@@ -9,7 +9,6 @@ import './ImagesCarousel.css';
 
 const ImagesCarousel = () => {
   const isMobile = useMediaQuery({ query: '(max-device-width: 800px)' });
-  const isDesktop = !isMobile;
 
   const [index, setIndex] = useState(0);
   const numberOfImages = carouselImages.length;
@@ -25,21 +24,42 @@ const ImagesCarousel = () => {
     return setIndex(index - 1);
   };
 
-  const renderCarouselItems = () => {
+  const renderMobileItems = () => {
     let items = [];
     for (let i = 0; i <= lastIndex; i++) {
       items.push(
         <Carousel.Item>
-          {isMobile && <CarouselMobileItem image={carouselImages[i]} />}
-          {isDesktop && <CarouselDesktopItem images={carouselImages} />}
+          <CarouselMobileItem image={carouselImages[i]} />
         </Carousel.Item>,
       );
     }
     return items;
   };
 
+  const renderDesktopItems = () => {
+    let items = [];
+    let indexOfImage = 0;
+    for (let i = 0; i <= lastIndex; i++) {
+      items.push(
+        <Carousel.Item>
+          <CarouselDesktopItem
+            images={[
+              carouselImages[indexOfImage],
+              carouselImages[indexOfImage + 1],
+              carouselImages[indexOfImage + 2],
+            ]}
+          />
+        </Carousel.Item>,
+      );
+      indexOfImage += 3;
+    }
+    return items;
+  };
+
+  const renderCarouselItems = () => (isMobile ? renderMobileItems() : renderDesktopItems());
+
   return (
-    <div className="images-carousel-container">
+    <div id="carousel-container" className="images-carousel-container">
       <ArrowLeft
         size={50}
         className="carousel-arrow carousel-prev-arrow"

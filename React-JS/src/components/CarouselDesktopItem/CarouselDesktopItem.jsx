@@ -16,7 +16,7 @@ const ImagesCarouselItem = ({ images }) => {
           </p>
         </div>
         <div class="image-container">
-          <img class="carousel-image" src={images[0]} alt="" />
+          <img class="carousel-image" src={images[1]} alt="" />
           <h3 class="carousel-image-title">LOREM IPSUM</h3>
           <p class="carousel-text">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aliquid deleniti amet?
@@ -25,7 +25,7 @@ const ImagesCarouselItem = ({ images }) => {
           </p>
         </div>
         <div class="image-container">
-          <img class="carousel-image" src={images[0]} alt="" />
+          <img class="carousel-image" src={images[2]} alt="" />
           <h3 class="carousel-image-title">LOREM IPSUM</h3>
           <p class="carousel-text">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aliquid deleniti amet?
