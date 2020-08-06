@@ -1,14 +1,41 @@
+.card-container {
+  display: flex;
+  justify-content: center;
+  padding: 2% 12%;
+  margin: -1%;
+  width: 100vw;
+  background-color: rgb(69, 69, 69);
+}
+
 .carousel-container .image-container {
-  margin-bottom: -50px;
+  margin: 5%;
   padding: 5%;
+}
+
+.image-container {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container .carousel-image {
+  width: 22vw;
 }
 
 .carousel-image {
   border: 10px solid rgb(105, 105, 105);
 }
 
-.carousel-text {
+.carousel-image-title {
+  color: white;
+}
+
+.image-container .carousel-text {
   color: white;
   margin-bottom: 50px;
   padding: 2% 5%;
+  word-break: break-all;
+  /* text-align: center; */
+  /* text-justify: distribute; */
 }

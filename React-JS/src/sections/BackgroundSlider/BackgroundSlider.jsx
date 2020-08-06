@@ -4,9 +4,9 @@ import { SelectBackgroundImage, HeaderDesktop, HeaderMobile } from '../../compon
 import { backgroundImages } from '../../data';
 import { arrowGrey } from '../../images';
 import { useMediaQuery } from 'react-responsive';
-import './BackgroundCarousel.css';
+import './BackgroundSlider.css';
 
-const CarouselComponent = () => {
+const BackgroundSlider = () => {
   const isMobile = useMediaQuery({ query: '(max-device-width: 800px)' });
   const isDesktop = !isMobile;
 
@@ -16,7 +16,7 @@ const CarouselComponent = () => {
     setIndex(selectedIndex);
   };
   return (
-    <div className="carousel-container">
+    <div className="slider-container">
       {isMobile && (
         <div className="header-mobile-container">
           <HeaderMobile />
@@ -52,4 +52,4 @@ const CarouselComponent = () => {
   );
 };
 
-export default CarouselComponent;
+export default BackgroundSlider;

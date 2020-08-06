@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  BackgroundCarousel,
+  BackgroundSlider,
   ImagesCarousel,
   CircleImage,
   Accordion,
@@ -13,7 +13,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
       <div className="App">
-        <BackgroundCarousel />
+        <BackgroundSlider />
         <ImagesCarousel />
         <CircleImage />
         <Accordion />
