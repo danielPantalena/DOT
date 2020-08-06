@@ -69,7 +69,8 @@ a.accordion-toggle:hover {
 .toggle-selected + .accordion-content {
   background-color: white;
   color: rgb(112, 112, 112);
-  height: 50vh;
+  height: 60vh;
+  margin-top: 10px;
   opacity: 1;
   padding: 1%;
 }

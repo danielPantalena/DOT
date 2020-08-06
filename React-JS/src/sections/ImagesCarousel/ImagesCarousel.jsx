@@ -3,7 +3,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import { ArrowLeft, ArrowRight } from 'react-bootstrap-icons';
 import { useMediaQuery } from 'react-responsive';
 import { carouselImages } from '../../data';
-import { ImagesCarouselItem } from '../../components';
+import { CarouselMobileItem, CarouselDesktopItem } from '../../components';
 
 import './ImagesCarousel.css';
 
@@ -30,7 +30,8 @@ const ImagesCarousel = () => {
     for (let i = 0; i <= lastIndex; i++) {
       items.push(
         <Carousel.Item>
-          <ImagesCarouselItem images={carouselImages} />
+          {isMobile && <CarouselMobileItem image={carouselImages[i]} />}
+          {isDesktop && <CarouselDesktopItem images={carouselImages} />}
         </Carousel.Item>,
       );
     }
@@ -50,12 +51,7 @@ const ImagesCarousel = () => {
         onClick={() => nextIndex()}
       />
 
-      <Carousel
-        activeIndex={index}
-        interval={null}
-        controls={false}
-        indicators={false}
-      >
+      <Carousel activeIndex={index} interval={null} controls={false} indicators={false}>
         {renderCarouselItems()}
       </Carousel>
     </div>

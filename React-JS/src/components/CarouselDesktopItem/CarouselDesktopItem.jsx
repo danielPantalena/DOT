@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card'
-import './ImagesCarouselItem.css';
+import './CarouselDesktopItem.css';
 
 const ImagesCarouselItem = ({ images }) => {
   return (

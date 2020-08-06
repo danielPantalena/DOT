@@ -1,0 +1,42 @@
+div.card {
+  background-color: rgb(69, 69, 69);
+}
+
+.card-container {
+  background-color: rgb(69, 69, 69);
+  display: flex;
+  justify-content: center;
+  padding: 2% 12%;
+  width: 100vw;
+}
+
+.carousel-container .image-container {
+  margin: 5%;
+  padding: 5%;
+}
+
+.image-container {
+  align-items: center;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  
+}
+
+.image-container .carousel-mobile-image {
+  border: 10px solid rgb(105, 105, 105);
+  margin-top: 10px;
+  width: 80vw;
+}
+
+
+.carousel-image-title {
+  color: white;
+}
+
+.image-container .carousel-text {
+  color: white;
+  margin-bottom: 50px;
+  padding: 2% 5%;
+  word-break: break-all;
+}
